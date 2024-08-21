@@ -1,0 +1,15 @@
+# Copyright 2022 Manna Harbour
+# https://github.com/manna-harbour/miryoku
+
+name: 'xioKeyboard'
+on: workflow_dispatch
+jobs:
+  build:
+    uses: ./.github/workflows/main.yml
+    secrets: inherit
+    with:
+      board: '["nice_nano_v2"]'
+      shield: '["cradio_left","cradio_right"]'
+      kconfig: '["CONFIG_ZMK_KEYBOARD_NAME=xioKey","CONFIG_ZMK_SLEEP=y","CONFIG_ZMK_BLE_EXPERIMENTAL_CONN=y","CONFIG_BT_GATT_ENFORCE_SUBSCRIPTION=n","CONFIG_BT_CTLR_TX_PWR_PLUS_8=y"]'
+      nav: '["invertedt"]'
+      layers: '["flip"]'
